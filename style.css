@@ -9,6 +9,20 @@
   }
 
 
+  
+  @media screen and (max-width: 768px) {
+    .about-me-container {
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .text-column {
+      padding: 20px;
+    }
+  }
+  
+
+
 /*MENU HAMBURGER ONDE TEM AS LISTAS, INICIO, SOBRE, CONTACTO, LOGIN*/
   
   .header {
