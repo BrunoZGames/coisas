@@ -259,59 +259,50 @@ h3 {
     height: 100%;
 }
 
-/* Additional CSS styles */
-.contact-section {
-    padding: 80px 0;
-    background-color: #f9f9f9;
-    text-align: center;
+/* contact */
+.container-loc {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 0;
+  margin-right: 0;
+  height: 100vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding-bottom: 40px;
+  background-color: white;
 }
 
-.contact-heading {
-    font-size: 2.5em;
-    margin-bottom: 40px;
-    color: #333;
-    text-transform: uppercase;
+.map {
+  flex: 1;
+  min-width: 400px;
+  height: 100%;
 }
 
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
+.contact-info {
+  flex: 1;
+  min-width: 100px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: #333;
+  color: white;
 }
 
-.contact-form input[type="text"],
-.contact-form input[type="email"],
-.contact-form textarea {
-    width: 100%;
-    padding: 15px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
-    background-color: #f5f5f5;
+.contact-info h2 {
+  margin-top: 0;
+  font-weight: 700;
+  color: white;
 }
 
-.contact-form textarea {
-    height: 150px;
+.contact-info p {
+  margin: 15px 0;
+  font-weight: 400;
 }
 
-.contact-form input[type="submit"] {
-    background-color: #333;
-    color: #fff;
-    border: none;
-    padding: 18px 25px;
-    font-size: 18px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+.contact-info strong {
+  font-weight: 500;
 }
-
-.contact-form input[type="submit"]:hover {
-    background-color: #555;
-}
-
+/* end contact */
 .appointment-button {
     margin-top: 30px;
 }
@@ -351,6 +342,7 @@ h3 {
 .instagram-feed {
     display: flex;
     justify-content: center;
+    padding: 30px;
 }
 
 .instagram-feed .snapwidget-widget {
