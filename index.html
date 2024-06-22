@@ -2,181 +2,164 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fujimoto Barbershop</title>
-  <link rel="stylesheet" href="style.css" />
-  <script defer src="app.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fujimoto Barbershop</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Roboto&display=swap">
+
+
+    <style>
+
+    </style>
 </head>
 
 <body class="body">
 
-  <!--CABEÇALHO-->
+    <!--CABEÇALHO-->
 
-  <header class="header">
-    <nav class="nav">
-      <a class="logo" align="center"><img src="./imagens/fujimoto99.png" width="60" height="60"
-          align="center">Fujimoto</img></a>
-      <button class="hamburger"></button>
-      <ul class="nav-list">
-        <li><a href="index.html">Início</a></li>
-        <li><a href="sobre.html">Sobre</a></li>
-        <li><a href="contacto.html">Contacto</a></li>
-        <li><a href="login.html">Login</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header class="header">
+        <nav class="nav">
+            <a href="#" class="logo">
+                <img src="./imagens/fujimoto99.png" alt="Fujimoto" width="60" height="60">
+                <span class="logo-text">Fujimoto</span>
+            </a>
+                <div id="menuToggle">
+                  <input type="checkbox" />
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <ul id="menu">
+                    <a href="#inicio"><li>Inicio</li></a>
+                    <a href="#aboutme"><li>Sobre Mim</li></a>
+                    <a href="#contact"><li>Contato</li></a>
+                    <a href="login.php"><li>Log In</li></a>
+                    <a href="register.php"><li>Sign Up</li></a>
+                  </ul>
+                </div>
+        </nav>
+    </header>
 
-  <!--FOTO PAGINA INICIAL-->
 
-  <div class="conteudo">
-    <img src="imagens/inicio.jpg" width="1000%" height="1000%"></img>
-  </div>
+    <span id="inicio" class="anchor"></span>
 
-
-  <!--PAGINA SOBRE A BARBEARIA-->
-
-  <!--COLUNA DA ESQUERDA, VIDEOS-->
-  <div class="container">
-    <div class="coluna-esquerda">
-      <p>
-
-      <div class="video-container">
-        <video src="./imagens/vid3.mp4" id="video-slider" loop autoplay muted width="700" height="700"
-          align="left"></video>
-      </div>
-
-      </p>
+    <!--FOTO PAGINA INICIAL-->
+    <div class="banner">
+            <img src="imagens/inicio.jpg" alt="Fujimoto Barbershop" height="800px" width="100%">
+        
     </div>
 
-    <!--COLUNA DA MEIO, TEXTO SOBRE-->
-    <div class="coluna-meio">
+    <span id="aboutme" class="anchor"></span>
+    <!--PAGINA SOBRE A BARBEARIA-->
+    <div class="content">
+        <div class="about-me-container">
+            <!-- Left Video Column -->
+            <div class="video-column">
+                <div class="video-container">
+                    <video src="./imagens/vid1.mp4" loop autoplay muted></video>
+                </div>
+            </div>
 
-      <h1>SOBRE MIM!</h1>
-
-      <p align="justify">
-        <font size="4">O meu nome é Daniel Ferreira, tenho 18 anos e sou natural de Tarouca, na bela região de Viseu.
-          Recentemente, tive a alegria de concluir o curso de Barbeiro Profissional na reconhecida escola "DoItBetter"
-          em Coimbra.
-          Esta conquista representa um marco importante na minha vida e estou extremamente entusiasmado com as
-          oportunidades que esta área oferece.
-          Tenho observado um crescimento significativo da profissão de barbeiro, especialmente entre os jovens, o que me
-          deixa ainda mais motivado.</font>
-      </p>
-
-      <p>&nbsp;</p>
-
-      <p align="justify">
-        <font size="4">Atualmente, estou a aplicar na prática todos os conhecimentos e habilidades que adquiri durante o
-          curso.
-          Para isso, montei o meu próprio negócio, onde ofereço serviços de cortes de cabelo e barba diretamente no
-          conforto do meu quarto.
-          Esta experiência tem sido incrivelmente valiosa, permitindo-me evoluir como profissional, ganhar experiência
-          prática e também apoiar os meus futuros objetivos e ambições na área.</font>
-      </p>
-
-      <p>&nbsp;</p>
-
-      <p align="justify">
-        <font size="4">Se alguém estiver à procura de um corte de cabelo ou de barba personalizado, estou aqui para
-          ajudar! Tenho plena confiança nas minhas técnicas e competências, que abrangem uma vasta gama de estilos de
-          cortes masculinos.
-          Para mim, é extremamente gratificante poder trabalhar numa área que amo e ver a satisfação dos meus clientes
-          ao saírem com um visual renovado.</font>
-      </p>
-
-      <p>&nbsp</p>
-
-      <p align="justify">
-        <font size="4">A todos os interessados, fica o convite: venham experimentar os meus serviços e deixem-me cuidar
-          do vosso visual com dedicação e profissionalismo.</font>
-      </p>
-
-      <p>&nbsp</p>
-
-      <p align="justify">
-        <font size="4">Um abraço,</font>
-      </p>
-
-
-      <p align="justify">
-        <font size="4">Daniel Ferreira</font>
-      </p>
-
-    </div>
-
-    <!--COLUNA DA DIREITA, TEXTO VIDEOS-->
-
-    <div class="coluna-direita">
-      <p>
-
-      <div class="video-container">
-        <p>
-
-        <div class="video-container">
-          <video src="./imagens/vid3.mp4" id="video-slider" loop autoplay muted width="700" height="700"
-            align="left"></video>
+            <!-- Middle Text Column -->
+            <div class="text-column">
+                <h2 class="about-me-heading">SOBRE MIM!</h2>
+                <p class="about-me-text">O meu nome é Daniel Ferreira, tenho 18 anos e sou natural de Tarouca, na bela
+                    região de Viseu. Recentemente, tive a alegria de concluir o curso de Barbeiro Profissional na
+                    reconhecida escola "DoItBetter" em Coimbra. Esta conquista representa um marco importante na minha
+                    vida
+                    e estou extremamente entusiasmado com as oportunidades que esta área oferece. Tenho observado um
+                    crescimento significativo da profissão de barbeiro, especialmente entre os jovens, o que me deixa
+                    ainda
+                    mais motivado.</p>
+                <p class="about-me-text">Atualmente, estou a aplicar na prática todos os conhecimentos e habilidades que
+                    adquiri durante o curso. Para isso, montei o meu próprio negócio, onde ofereço serviços de cortes de
+                    cabelo e barba diretamente no conforto do meu quarto. Esta experiência tem sido incrivelmente
+                    valiosa,
+                    permitindo-me evoluir como profissional, ganhar experiência prática e também apoiar os meus futuros
+                    objetivos e ambições na área.</p>
+                <p class="about-me-text">Se alguém estiver à procura de um corte de cabelo ou de barba personalizado,
+                    estou
+                    aqui para ajudar! Tenho plena confiança nas minhas técnicas e competências, que abrangem uma vasta
+                    gama
+                    de estilos de cortes masculinos. Para mim, é extremamente gratificante poder trabalhar numa área que
+                    amo
+                    e ver a satisfação dos meus clientes ao saírem com um visual renovado.</p>
+                <p class="about-me-text">A todos os interessados, fica o convite: venham experimentar os meus serviços e
+                    deixem-me cuidar do vosso visual com dedicação e profissionalismo.</p>
+                <p class="about-me-text">Um abraço,</p>
+                <p class="about-me-text">Daniel Ferreira</p>
+            </div>
+            
+            <!-- Right Video Column -->
+            <div class="video-column">
+                <div class="video-container">
+                    <video src="./imagens/vid2.mp4" loop autoplay muted></video>
+                </div>
+            </div>
         </div>
 
-        </p>
-      </div>
+        <!--INSTAGRAM FEED-->
+        <div class="instagram-feed">
+            <iframe src="https://snapwidget.com/embed/1068456" class="snapwidget-widget" allowtransparency="true"
+                frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:765px; height:510px"
+                title="Posts from Instagram"></iframe>
+        </div>
+
+        <span id="contact" class="anchor"></span>
     </div>
+        <!--CONTACT SECTION-->
+        <section class="contact-section">
+            <div class="container-loc">
+                <div class="map">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d937.540305448903!2d-7.760836230337422!3d41.03545310980924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3b55005ab29431%3A0x48655faaa129c17c!2sFujimoto%20Barbershop!5e1!3m2!1spt-PT!2ses!4v1716940230462!5m2!1spt-PT!2ses"
+                        width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                </div>
+                <div class="contact-info">
+                    <h2>Informação de Contato</h2>
+                    <p><strong>Address:</strong> 123 Main Street, Anytown, USA</p>
+                    <p><strong>Phone:</strong> (123) 456-7890</p>
+                    <p><strong>Email:</strong> contact@example.com</p>
+                </div>
+            </div>
+        </section>
+        
+        <!--APPOINTMENT SECTION-->
+        <section class="appointment-section">
+            <div class="appointment-container">
+                <h1>Agendamento</h1>
+                <br>
+                <a href="agendamento.php"><button class="agendamento-button">Fazer um Agendamento</button></a>
+            </div>
+        </section>
 
-  </div>
-
-  <!--INSTAGRAM FEED-->
-
-  <div class="instagram-feed">
-    <iframe src="https://snapwidget.com/embed/1068456" class="snapwidget-widget" allowtransparency="true"
-      frameborder="0" scrolling="no" style="border:none; overflow:hidden;  width:765px; height:510px"
-      title="Posts from Instagram"></iframe>
-  </div>
-
-
-  <div class="servicos">
-
-
-  </div>
-
+    <!--RODAPÉ-->
+    <footer class="black-background">
+        <div class="page-inner-content footer-content">
+            <div class="logo-footer">
+                <h1 class="logo">Fujimoto Barbershop</h1>
+                <p>O meu objetivo é oferecer produtos e cortes de
+                    qualidade...</p>
+            </div>
+            <div class="links-footer">
+                <h3>Links úteis</h3>
+                <ul>
+                    <li><a href="https://www.instagram.com/fujimotobarbershop/" target="_blank">Instagram</a></li>
+                    <li><a href="https://www.x.com/" target="_blank">Twitter</a></li>
+                    <li><a href="https://www.tiktok.com/" target="_blank">TikTok</a></li>
+                    <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="page-inner-content" />
+        <div class="page-inner-content copyright">
+            <p>© 2024 - Rodrigo Pinto - Todos os Direitos Reservados</p>
+        </div>
+    </footer>
+    <script defer src="scripts.js"></script>
 </body>
-
-<!--RODAPÉ-->
-
-<footer class="black-background">
-  <div class="page-inner-content footer-content">
-    <div class="download-options">
-      <p>Baixe a nossa aplicação</p>
-      <p>Baixe a nossa aplicação para Android e IOS</p>
-      <div>
-        <img src="./imagens/play-store.png" alt="">
-        <img src="./imagens/app-store.png" alt="">
-      </div>
-    </div>
-
-    <div class="logo-footer">
-      <h1 class="logo">Fujimoto<span>Barbershop</span></h1>
-      <p>O meu objetivo é oferecer produtos e cortes de qualidade...ss
-        sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
-        sssssssssssssssssssssssssssssssssssssssss
-      </p>
-    </div>
-
-    <div class="links-footer">
-      <h3>Links úteis</h3>
-      <ul>
-        <li><a href="https://www.instagram.com/fujimotobarbershop/" target="_blank">Intagram</a></li>
-        <li><a href="https://www.x.com/" target="_blank">Twitter</a></li>
-        <li><a href="https://www.tiktok.com/" target="_blank">Tiktok</a></li>
-        <li><a href="https://www.facebook.com/" target="_blank">Facebook</a></li>
-      </ul>
-    </div>
-  </div>
-
-  <hr class="page-inner-content" />
-
-  <div class="page-inner-content copyright">
-    <p>copyright 2024 - Rodrigo Pinto - Todos os Direitos Reservados</p>
-  </div>
-</footer>
 
 </html>

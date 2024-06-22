@@ -1,3 +1,10 @@
+<?php
+require_once './backend/middleware.php';
+
+echo "This is a protected page. Only logged-in users can see this.";
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -5,7 +12,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fujimoto Barbershop</title>
-    <link rel="stylesheet" href="test.css" />
+    <link rel="stylesheet" href="styles.css" />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet"
@@ -27,39 +34,50 @@
                 <img src="./imagens/fujimoto99.png" alt="Fujimoto" width="60" height="60">
                 <span class="logo-text">Fujimoto</span>
             </a>
-                <div id="menuToggle">
-                  <input type="checkbox" />
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <ul id="menu">
-                    <a href="#"><li>Home</li></a>
-                    <a href="#"><li>About</li></a>
-                    <a href="#"><li>Info</li></a>
-                    <a href="#"><li>Contact</li></a>
-                  </ul>
-                </div>
+
+            <div class="nav-username">
+                <a href="profile.php"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor"
+                        class="size-4">
+                        <path fill-rule="evenodd"
+                            d="M15 8A7 7 0 1 1 1 8a7 7 0 0 1 14 0Zm-5-2a2 2 0 1 1-4 0 2 2 0 0 1 4 0ZM8 9c-1.825 0-3.422.977-4.295 2.437A5.49 5.49 0 0 0 8 13.5a5.49 5.49 0 0 0 4.294-2.063A4.997 4.997 0 0 0 8 9Z"
+                            clip-rule="evenodd" />
+                    </svg>
+
+                    <?= $_SESSION['user_info']['name'] . ' ' . $_SESSION['user_info']['lastname'] ?></a>
+            </div>
+            <div id="menuToggle">
+                <input type="checkbox" />
+                <span></span>
+                <span></span>
+                <span></span>
+                <ul id="menu">
+                    <a href="#inicio">
+                        <li>Inicio</li>
+                    </a>
+                    <a href="#aboutme">
+                        <li>Sobre Mim</li>
+                    </a>
+                    <a href="#contact">
+                        <li>Contato</li>
+                    </a>
+                    <a href="backend/logout.php">
+                        <li style="color: red;">Log Out</li>
+                    </a>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <div class="sidebar">
-        <ul class="sidebar-list">
-            <li><a href="index.html">Início</a></li>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="contacto.html">Contacto</a></li>
-            <li><a href="login.html">Login</a></li>
-        </ul>
-    </div>
 
-    <div class="overlay"></div>
+    <span id="inicio" class="anchor"></span>
 
     <!--FOTO PAGINA INICIAL-->
     <div class="banner">
-            <img src="imagens/inicio.jpg" alt="Fujimoto Barbershop" height="800px" width="100%">
-        
+        <img src="imagens/inicio.jpg" alt="Fujimoto Barbershop" height="800px" width="100%">
+
     </div>
 
-
+    <span id="aboutme" class="anchor"></span>
     <!--PAGINA SOBRE A BARBEARIA-->
     <div class="content">
         <div class="about-me-container">
@@ -115,51 +133,43 @@
                 title="Posts from Instagram"></iframe>
         </div>
 
-        <!--SERVIÇOS SECTION-->
-        <section class="servicos">
-            <!-- You can add your service details here -->
-        </section>
+        <span id="contact" class="anchor"></span>
     </div>
-        <!--CONTACT SECTION-->
-        <section class="contact-section">
-            <div class="container-loc">
-                <div class="map">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d937.540305448903!2d-7.760836230337422!3d41.03545310980924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3b55005ab29431%3A0x48655faaa129c17c!2sFujimoto%20Barbershop!5e1!3m2!1spt-PT!2ses!4v1716940230462!5m2!1spt-PT!2ses"
-                        width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                </div>
-                <div class="contact-info">
-                    <h2>Contact Information</h2>
-                    <p><strong>Address:</strong> 123 Main Street, Anytown, USA</p>
-                    <p><strong>Phone:</strong> (123) 456-7890</p>
-                    <p><strong>Email:</strong> contact@example.com</p>
-                    <p><strong>Business Hours:</strong><br>
-                        Monday - Friday: 9:00 AM - 6:00 PM<br>
-                        Saturday: 10:00 AM - 4:00 PM<br>
-                        Sunday: Closed
-                    </p>
-                </div>
+    <!--CONTACT SECTION-->
+    <section class="contact-section">
+        <div class="container-loc">
+            <div class="map">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d937.540305448903!2d-7.760836230337422!3d41.03545310980924!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd3b55005ab29431%3A0x48655faaa129c17c!2sFujimoto%20Barbershop!5e1!3m2!1spt-PT!2ses!4v1716940230462!5m2!1spt-PT!2ses"
+                    width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
             </div>
-        </section>
+            <div class="contact-info">
+                <h2>Informação de Contato</h2>
+                <p><strong>Address:</strong> 123 Main Street, Anytown, USA</p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+                <p><strong>Email:</strong> contact@example.com</p>
+            </div>
+        </div>
+    </section>
 
-        <!--APPOINTMENT SECTION-->
-    
+    <!--APPOINTMENT SECTION-->
+
+    <section class="appointment-section">
+        <div class="appointment-container">
+            <h1>Agendamento</h1>
+            <br>
+            <a href="agendamento.php"><button class="agendamento-button">Fazer um Agendamento</button></a>
+        </div>
+    </section>
 
     <!--RODAPÉ-->
     <footer class="black-background">
         <div class="page-inner-content footer-content">
-            <div class="download-options">
-                <p>Baixe a nossa aplicação</p>
-                <p>Baixe a nossa aplicação para Android e IOS</p>
-                <div>
-                    <img src="./imagens/play-store.png" alt="">
-                    <img src="./imagens/app-store.png" alt="">
-                </div>
-            </div>
             <div class="logo-footer">
-                <h1 class="logo">Fujimoto<span>Barbershop</span></h1>
+                <h1 class="logo">Fujimoto Barbershop</h1>
                 <p>O meu objetivo é oferecer produtos e cortes de
-                    qualidade...ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss</p>
+                    qualidade...</p>
             </div>
             <div class="links-footer">
                 <h3>Links úteis</h3>
@@ -173,7 +183,7 @@
         </div>
         <hr class="page-inner-content" />
         <div class="page-inner-content copyright">
-            <p>copyright 2024 - Rodrigo Pinto - Todos os Direitos Reservados</p>
+            <p>© 2024 - Rodrigo Pinto - Todos os Direitos Reservados</p>
         </div>
     </footer>
     <script defer src="scripts.js"></script>

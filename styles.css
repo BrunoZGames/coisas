@@ -140,6 +140,11 @@
     font-size: 22px;
     color: white;
   }
+
+  #menu li:hover
+  {
+    color: #bebebe;
+  }
   
   /*
    * And let's fade it in from the left
@@ -169,8 +174,7 @@ body {
 h1,
 h2,
 h3 {
-    font-family: 'Playfair Display', sans-serif;
-    /* Apply Montserrat font to headings */
+    font-family: 'Playfair Display', 'Roboto';
 }
 
 .header {
@@ -266,7 +270,7 @@ h3 {
   flex-wrap: wrap;
   margin-left: 0;
   margin-right: 0;
-  height: 100vh;
+  height: 70vh;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding-bottom: 40px;
   background-color: white;
@@ -330,15 +334,7 @@ h3 {
     width: 100%;
   }
   
-  .agendamento-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff; /* Example button color */
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 18px;
-  }
+
 
 .instagram-feed {
     display: flex;
@@ -508,10 +504,157 @@ h3 {
   
   hr.page-inner-content {
     border-color: #666; /* Horizontal line color */
-    margin: 30px 0; /* Adjust margin */
+    margin-top: 30px;
+    margin-bottom: 30px;
   }
   
   .copyright p {
     text-align: center; /* Center copyright text */
   }
   
+  .anchor {
+    display: block;
+    position: relative;
+    top: -80px; /* Adjust anchor position */
+    visibility: hidden;
+  }
+
+
+  .reg-cont {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f9;
+    margin: 0;
+  }
+
+  .register-container {
+    background-color: #fff;
+    padding: 20px 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+}
+
+.title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+}
+
+.register-form label {
+    font-weight: 500;
+    color: #555;
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+.register-form input[type="text"],
+.register-form input[type="password"],
+.register-form input[type="email"] {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.register-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+.register-form input[type="submit"]:hover {
+    background-color: #218838;
+}
+
+.register-form p {
+    text-align: center;
+    margin-top: 20px;
+    color: #555;
+}
+
+.register-form p a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.register-form p a:hover {
+    text-decoration: underline;
+}
+
+.error {
+  color: red;
+  background-color: #fdd;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.success {
+  color: green;
+  background-color: #dfd;
+  padding: 10px;
+  margin-bottom: 20px;
+  border-radius: 4px;
+}
+
+.nav-username {
+  margin-right: 120px;
+}
+
+.nav-username a {
+  display: flex;
+  flex-direction: row-reverse;
+  color: #fff;
+  font-size: 1.2em;
+  align-items: center;
+}
+
+.nav-username a:hover {
+  color: #ccc;
+}
+
+
+
+
+.appointment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 200px; /* Adjust height as needed */
+  background-color: #fff; /* Light background color */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for depth */
+}
+
+
+.agendamento-button:hover {
+  background-color: #2c92ff; /* Darker green on hover */
+}
+
+.agendamento-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff; /* Example button color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 18px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* Smooth transition */
+}
