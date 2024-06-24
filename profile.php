@@ -1,3 +1,14 @@
+<?php
+require_once './backend/middleware.php';
+session_start();
+
+if (!isset($_SESSION['user_info'])) {
+    header("Location: login.html");
+    exit();
+}
+
+$user_info = $_SESSION['user_info'];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -36,6 +47,11 @@
                     <a href="logged.php">
                         <li>Inicio</li>
                     </a>
+                    <?php
+                    if ($_SESSION['role'] == 2) {
+                        echo '<a href="admin.php"><li>Painel de Controlo</li></a>';
+                    }
+                    ?>
                     <a href="backend/logout.php">
                         <li style="color: red;">Log Out</li>
                     </a>
@@ -44,22 +60,47 @@
         </nav>
     </header>
 
-    <script src="https://cdn.jsdelivr.net/npm/fullcalendar-scheduler@6.1.14/index.global.min.js"></script>
-    <script>
-
-      document.addEventListener('DOMContentLoaded', function() {
-        var calendarEl = document.getElementById('calendar');
-        var calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'resourceTimelineWeek'
-        });
-        calendar.render();
-      });
-
     </script>
-    <div class="reg-cont">
+    <div class="reg-cont2">
 
 
-    <div id='calendar'></div>
+        <div class="profile-container">
+            <h1 class="title">O teu Perfil</h1>
+
+            <?php
+            if (isset($_SESSION['error'])) {
+                echo "<div class='error'>{$_SESSION['error']}</div>";
+                unset($_SESSION['error']);
+            }
+            if (isset($_SESSION['success'])) {
+                echo "<div class='success'>{$_SESSION['success']}</div>";
+                unset($_SESSION['success']);
+            }
+            ?>
+
+            <div class="profile-info">
+                <p><strong>Nome:</strong>
+                    <?= htmlspecialchars($user_info['name']) . " " . htmlspecialchars($user_info['lastname']) ?> </p>
+                <p><strong>Nome de Usuario:</strong> <?php echo htmlspecialchars($user_info['username']); ?></p>
+                <p><strong>Email:</strong> <?php echo htmlspecialchars($user_info['email']); ?></p>
+                <p><strong>Telemóvel:</strong> <?php echo htmlspecialchars($user_info['phone']); ?></p>
+            </div>
+
+            <h2 class="title">Mudar Palavra-Passe</h2>
+            <form action="backend/auth.php" method="post" class="change-password-form">
+                <input type="hidden" name="action" value="change_password">
+                <label for="current_password">Palavra-Passe Atual:</label>
+                <input type="password" id="current_password" name="current_password" required>
+
+                <label for="new_password">Nova Palavra-Passe:</label>
+                <input type="password" id="new_password" name="new_password" required>
+
+                <label for="confirm_password">Confirma a nova Palavra-Passe:</label>
+                <input type="password" id="confirm_password" name="confirm_password" required>
+
+                <input type="submit" value="Change Password">
+            </form>
+        </div>
 
 
 
@@ -91,7 +132,7 @@
         </div>
     </footer>
     <script defer src="scripts.js"></script>
-    
+
 </body>
 
 </html>

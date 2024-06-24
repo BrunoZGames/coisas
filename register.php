@@ -89,7 +89,7 @@ if (isset($_SESSION['token'])) {
 
 
                 <input type="submit" value="Register">
-                <p>Já tem uma conta? <a href="login.html">Log In</a></p>
+                <p>Já tem uma conta? <a href="login.php">Log In</a></p>
             </form>
         </div>
     </div>

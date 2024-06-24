@@ -75,7 +75,7 @@ if (isset($_SESSION['token'])) {
                 }
                 ?>
                 <input type="submit" value="Log In">
-                <p>Não tem uma conta? <a href="register.html">Registre-se</a></p>
+                <p>Não tem uma conta? <a href="register.php">Registre-se</a></p>
             </form>
         </div>
     </div>

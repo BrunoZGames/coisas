@@ -60,9 +60,15 @@ echo "This is a protected page. Only logged-in users can see this.";
                     <a href="#contact">
                         <li>Contato</li>
                     </a>
+                    <?php
+                    if ($_SESSION['role'] == 2) {
+                        echo '<a href="admin.php"><li>Painel de Controlo</li></a>';
+                    }
+                    ?>
                     <a href="backend/logout.php">
                         <li style="color: red;">Log Out</li>
                     </a>
+                    
                 </ul>
             </div>
         </nav>

@@ -23,6 +23,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
+
 // Function to generate a random token
 function generateToken()
 {
@@ -150,6 +151,74 @@ function isAuthenticated($conn)
     return $authenticated;
 }
 
+// Middleware to check if the user is an admin
+function isAdmin($conn)
+{
+    if (!isset($_SESSION['token'])) {
+        return false;
+    }
+
+    $token = $_SESSION['token'];
+
+    // Prepare statement to fetch role_name from users and roles tables
+    $stmt = $conn->prepare("SELECT r.role_name 
+                            FROM users u 
+                            JOIN role_type r ON u.role_id = r.role_id 
+                            WHERE u.token = ?");
+    $stmt->bind_param("s", $token);
+
+    // Execute the query
+    $stmt->execute();
+
+    // Bind result variables
+    $stmt->bind_result($role_name);
+
+    // Fetch the result
+    $stmt->fetch();
+
+    // Close statement
+    $stmt->close();
+
+    // Check if role_name matches "Admin"
+    return $role_name === "administrador";
+}
+
+// Function to change the user's password
+function changePassword($conn, $user_id, $current_password, $new_password) {
+    // Fetch the current password hash from the database
+    $stmt = $conn->prepare("SELECT password FROM users WHERE id = ?");
+    $stmt->bind_param("i", $user_id);
+    $stmt->execute();
+    $stmt->store_result();
+
+    // Check if the user exists
+    if ($stmt->num_rows > 0) {
+        $stmt->bind_result($hashed_password);
+        $stmt->fetch();
+
+        // Verify the current password
+        if (password_verify($current_password, $hashed_password)) {
+            // Hash the new password
+            $new_hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+
+            // Update the password in the database
+            $update_stmt = $conn->prepare("UPDATE users SET password = ? WHERE id = ?");
+            $update_stmt->bind_param("si", $new_hashed_password, $user_id);
+            $update_stmt->execute();
+            $update_stmt->close();
+
+            $_SESSION['success'] = "Password changed successfully!";
+        } else {
+            $_SESSION['error'] = "Current password is incorrect.";
+        }
+    } else {
+        $_SESSION['error'] = "User not found.";
+    }
+
+    // Close statement
+    $stmt->close();
+}
+
 // Handling form submission
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $action = $_POST['action'];
@@ -166,6 +235,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = $_POST['username'];
         $password = $_POST['password'];
         loginUser($conn, $username, $password);
+    } elseif ($action == 'change_password') {
+        $current_password = $_POST['current_password'];
+        $new_password = $_POST['new_password'];
+        $confirm_password = $_POST['confirm_password'];
+        $user_id = $_SESSION['user_info']['id'];
+
+        if ($new_password === $confirm_password) {
+            changePassword($conn, $user_id, $current_password, $new_password);
+        } else {
+            $_SESSION['error'] = "New password and confirm password do not match.";
+        }
     }
     header("Location: " . $_SERVER["HTTP_REFERER"]);
     exit();

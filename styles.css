@@ -525,8 +525,13 @@ h3 {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #f4f4f9;
-    margin: 0;
+    background: linear-gradient(135deg, #ece9e6, #ffffff);
+  }
+
+  #Schedule
+  {
+    margin-left: 100px;
+    margin-right: 100px;
   }
 
   .register-container {
@@ -657,4 +662,212 @@ h3 {
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+.profile-container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  width: 100%;
+  margin: 20px;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+}
+
+.profile-info p {
+  font-size: 18px;
+  color: #555;
+  margin: 10px 0;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.change-password-form label {
+  font-weight: 600;
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 15px;
+}
+
+.change-password-form input {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.change-password-form input:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.change-password-form select {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.change-password-form select:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.change-password-form input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+}
+
+.change-password-form input[type="password"]:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.change-password-form input[type="submit"] {
+  width: 100%;
+  padding: 12px;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.change-password-form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+.reg-cont2 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #ece9e6, #ffffff);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin-top: 20px;
+}
+
+.control-panel-container {
+  background-color: #ffffff;
+  padding: 30px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 100vw;
+  width: 100%;
+  margin: 20px;
+}
+
+.title {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333;
+  text-align: center;
+  font-weight: 600;
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.user-table th, .user-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+.user-table th {
+  background-color: #f2f2f2;
+  font-weight: 600;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+.user-table a {
+  color: #007BFF;
+  text-decoration: none;
+  margin-right: 10px;
+}
+
+.user-table a:hover {
+  text-decoration: underline;
+}
+
+.actionssvg {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.actionssvg a {
+  cursor: pointer;
+  width: 30px;
+  height: 40px;
+  fill: #007BFF;
+}
+
+.search-form {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.search-form input[type="text"] {
+  padding: 10px;
+  width: 70%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.search-form input[type="text"]:focus {
+  border-color: #007BFF;
+  outline: none;
+}
+
+.search-form input[type="submit"] {
+  padding: 10px 20px;
+  background-color: #007BFF;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.search-form input[type="submit"]:hover {
+  background-color: #0056b3;
 }
